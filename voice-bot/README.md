@@ -1,28 +1,32 @@
-# hotel-voice-bot
-Hotel service bot to greet people and make life easier for hotel staff
+# Voice Bot - Automatische Telefonzentrale
 
-# Voice Bot - Hotel Support
-
-Ein Voice-Bot für automatisierte Telefonannahme in Hotels.
+Ein Voice-Bot für automatisierte Telefonannahme für kleine und mittlere Betriebe.
 
 ## Features (Phase 1)
 
 - Automatische Anrufannahme
 - DTMF-Menüführung
 - Öffnungszeiten ansagen
-- Check-in/Check-out Infos
+- Rückrufbitte aufnehmen
+- Voicemail aufnehmen
 - Weiterleitung zu Mitarbeitern
+
+## Tech Stack
+
+- Python 3.10+
+- FastAPI
+- Twilio Voice API
+- ngrok (Development)
 
 ## Setup
 ```bash
 pip install -r requirements.txt
 cp .env.example .env
-# Edit .env with Twilio credentials
 uvicorn main:app --reload
 ```
 
-## Test
+## Roadmap
 
-1. Start ngrok: `ngrok http 8000`
-2. Configure Twilio webhook
-3. Call your number
+- [x] Phase 1: Basic DTMF menu
+- [ ] Phase 2: Speech recognition
+- [ ] Phase 3: AI-powered responses

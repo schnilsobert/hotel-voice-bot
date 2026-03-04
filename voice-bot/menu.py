@@ -1,4 +1,4 @@
-from twilio.twiml.voice_response import VoiceResponse, Gather
+from twilio.twiml.voice_response import VoiceResponse, Gather, Record
 import responses
 import os
 from dotenv import load_dotenv
@@ -14,15 +14,26 @@ def handle_menu_selection(digit: str) -> VoiceResponse:
         response.redirect("/voice")
         
     elif digit == "2":
-        response.say(responses.CHECKIN_INFO, language="de-DE")
-        response.redirect("/voice")
+        response.say(responses.CALLBACK_MESSAGE, language="de-DE")
+        response.record(
+            max_length=30,
+            action="/handle-recording",
+            method="POST",
+            finish_on_key="#"
+        )
         
     elif digit == "3":
+        response.say(responses.VOICEMAIL_MESSAGE, language="de-DE")
+        response.record(
+            max_length=120,
+            action="/handle-recording",
+            method="POST",
+            finish_on_key="#"
+        )
+        
+    elif digit == "9":
         response.say(responses.FORWARD_MESSAGE, language="de-DE")
         response.dial(os.getenv("FORWARD_NUMBER"))
-        
-    elif digit == "0":
-        response.redirect("/voice")
         
     else:
         response.say(responses.INVALID_INPUT, language="de-DE")
