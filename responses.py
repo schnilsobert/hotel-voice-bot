@@ -8,9 +8,10 @@ OPENING_HOURS = """<speak><prosody rate="85%">Unsere Öffnungszeiten sind Montag
 <break time="300ms"/> sowie Samstag von 8 bis 12 Uhr.</prosody></speak>"""
 
 CALLBACK_MESSAGE = """<speak><prosody rate="85%">Bitte sprechen Sie Ihren Namen und Ihre Rückrufnummer nach dem Ton.
-<break time="300ms"/> Wir melden uns so schnell wie möglich bei Ihnen.</prosody></speak>"""
+<break time="300ms"/> Drücken Sie die Raute-Taste wenn Sie fertig sind.</prosody></speak>"""
 
-VOICEMAIL_MESSAGE = """<speak><prosody rate="85%">Bitte hinterlassen Sie Ihre Nachricht nach dem Ton.</prosody></speak>"""
+VOICEMAIL_MESSAGE = """<speak><prosody rate="85%">Bitte hinterlassen Sie Ihre Nachricht nach dem Ton.
+<break time="300ms"/> Drücken Sie die Raute-Taste wenn Sie fertig sind.</prosody></speak>"""
 
 FORWARD_MESSAGE = """<speak><prosody rate="85%">Einen Moment bitte,<break time="300ms"/> ich verbinde Sie weiter.</prosody></speak>"""
 
